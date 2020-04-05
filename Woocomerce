@@ -4,8 +4,8 @@ add_filter( 'woocommerce_available_payment_gateways', 'payment_gateway_disable_p
 
     $user = wp_get_current_user();
 
-    if ( isset( $available_gateways['woo-mercado-pago-basic'] ) && in_array('Wholesale-Customer', $user->roles)  ) {
-        unset( $available_gateways['woo-mercado-pago-basic'] );
+    if ( isset( $available_gateways['woo-mercado-pago-custom'] ) && in_array('Wholesale-Customer', $user->roles)  ) {
+        unset( $available_gateways['woo-mercado-pago-custom'] );
     }
 
    return $available_gateways;
